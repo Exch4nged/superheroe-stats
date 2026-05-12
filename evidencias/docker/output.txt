@@ -67,5 +67,5 @@
 Comparación completada correctamente.
 
 ========== docker ps -a ==========
-CONTAINER ID   IMAGE           COMMAND            CREATED         STATUS                     PORTS     NAMES
-87c04b4c9272   superhero-app   "python3 app.py"   2 minutes ago   Exited (0) 2 minutes ago             samplerunning
+CONTAINER ID   IMAGE           COMMAND            CREATED          STATUS                     PORTS     NAMES
+3f0672fab1b7   superhero-app   "python3 app.py"   14 seconds ago   Exited (0) 4 seconds ago             samplerunning
