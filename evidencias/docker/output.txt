@@ -1,36 +1,71 @@
-====================================
- Hero Scout CLI
- Comparador profesional de superhéroes
-====================================
-Modo automático detectado por variables de entorno.
 
-====================================
-Comparando: Batman vs Lex Luthor
-====================================
+=============================================
+  SUPERHERO STATS ANALYZER
+  Comparador profesional de superhéroes
+  Axl Urrutia | DRY7122
+=============================================
 
-Datos generales:
-Batman: Terry McGinnis | DC Comics
-Lex Luthor: Lex Luthor | DC Comics
+  Modo automático activado (Docker/Jenkins)
 
-Comparación de estadísticas:
+  [Modo automático] Héroe 1: 'batman'
 
-Fuerza:
-Batman: 40/100
-Lex Luthor: 53/100
-Ganador: Lex Luthor
+  Se encontraron 3 resultados para 'batman':
+    1. Batman (DC Comics)
+    2. Batman (DC Comics)
+    3. Batman II (Nightwing)
+  Selección automática: 1
 
-Velocidad:
-Batman: 29/100
-Lex Luthor: 25/100
-Ganador: Batman
+  [Modo automático] Héroe 2: 'superman'
 
-Combate:
-Batman: 90/100
-Lex Luthor: 70/100
-Ganador: Batman
+  Se encontraron 2 resultados para 'superman':
+    1. Cyborg Superman (DC Comics)
+    2. Superman (Superman Prime One-Million)
+  Selección automática: 2
+
+=============================================
+  Batman vs Superman
+=============================================
+  Batman: Terry McGinnis | DC Comics | good
+  Superman: Clark Kent | Superman Prime One-Million | good
+
+  COMPARACIÓN DE STATS:
+
+  Inteligencia:
+    Batman: 81/100
+    Superman: 94/100
+    >> Ganador: Superman
+
+  Fuerza:
+    Batman: 40/100
+    Superman: 100/100
+    >> Ganador: Superman
+
+  Velocidad:
+    Batman: 29/100
+    Superman: 100/100
+    >> Ganador: Superman
+
+  Durabilidad:
+    Batman: 55/100
+    Superman: 100/100
+    >> Ganador: Superman
+
+  Poder:
+    Batman: 63/100
+    Superman: 100/100
+    >> Ganador: Superman
+
+  Combate:
+    Batman: 90/100
+    Superman: 85/100
+    >> Ganador: Batman
+
+=============================================
+  GANADOR GENERAL: Superman 🏆
+=============================================
 
 Comparación completada correctamente.
 
 ========== docker ps -a ==========
-CONTAINER ID   IMAGE           COMMAND            CREATED          STATUS          PORTS     NAMES
-576b19003ccb   superhero-app   "python3 app.py"   16 seconds ago   Up 10 seconds             samplerunning
+CONTAINER ID   IMAGE           COMMAND            CREATED          STATUS                     PORTS     NAMES
+6dccbf33b51a   superhero-app   "python3 app.py"   16 seconds ago   Exited (0) 7 seconds ago             samplerunning

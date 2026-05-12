@@ -25,7 +25,7 @@ docker run --name samplerunning \
   -e HERO_1="batman" \
   -e HERO_1_I="1" \
   -e HERO_2="superman" \
-  -e HERO_2_I="1" \
+  -e HERO_2_I="2" \
   superhero-app > evidencias/docker/output.txt 2>&1
 
 echo "" >> evidencias/docker/output.txt
