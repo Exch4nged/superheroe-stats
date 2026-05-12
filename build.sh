@@ -2,13 +2,17 @@
 # Script de automatización: genera Dockerfile, construye imagen Docker y ejecuta contenedor
 # Autor: Axl Urrutia | DRY7122
 
-mkdir -p evidencias/docker  # Crea la carpeta de evidencias si no existe
+# Crea la carpeta de evidencias si no existe
+mkdir -p evidencias/docker
 
 echo "Limpiando contenedor anterior si existe..."
-docker stop samplerunning 2>/dev/null  # Detiene el contenedor si está corriendo (ignora error si no existe)
-docker rm samplerunning 2>/dev/null    # Elimina el contenedor si existe (ignora error si no existe)
+# Detiene el contenedor si está corriendo (ignora error si no existe)
+docker stop samplerunning 2>/dev/null
+# Elimina el contenedor si existe (ignora error si no existe)
+docker rm samplerunning 2>/dev/null
 
 echo "Creando Dockerfile..."
+# Genera el Dockerfile automáticamente con heredoc
 cat > Dockerfile <<EOF
 # Imagen base oficial de Python 3.11 versión slim (liviana)
 FROM python:3.11-slim
@@ -28,19 +32,23 @@ CMD ["python3", "app.py"]
 EOF
 
 echo "Construyendo imagen Docker..."
-docker build -t superhero-app .  # Construye la imagen con el tag superhero-app
+# Construye la imagen con el tag superhero-app
+docker build -t superhero-app .
 
 echo "Ejecutando contenedor..."
+# Ejecuta el contenedor pasando variables de entorno para modo automático
+# La salida completa se guarda en output.txt como evidencia
 docker run --name samplerunning \
-  -e SUPERHERO_TOKEN="${SUPERHERO_TOKEN}" \  # Token de API pasado como variable de entorno
-  -e HERO_1="batman" \                       # Héroe 1 a buscar
-  -e HERO_1_I="1" \                          # Índice del resultado para héroe 1
-  -e HERO_2="superman" \                     # Héroe 2 a buscar
-  -e HERO_2_I="2" \                          # Índice del resultado para héroe 2
-  superhero-app > evidencias/docker/output.txt 2>&1  # Guarda toda la salida en output.txt
+  -e SUPERHERO_TOKEN="${SUPERHERO_TOKEN}" \
+  -e HERO_1="batman" \
+  -e HERO_1_I="1" \
+  -e HERO_2="superman" \
+  -e HERO_2_I="2" \
+  superhero-app > evidencias/docker/output.txt 2>&1
 
+# Agrega el estado del contenedor al archivo de evidencias
 echo "" >> evidencias/docker/output.txt
 echo "========== docker ps -a ==========" >> evidencias/docker/output.txt
-docker ps -a >> evidencias/docker/output.txt  # Registra el estado final del contenedor
+docker ps -a >> evidencias/docker/output.txt
 
 echo "Proceso finalizado. Revisar evidencias/docker/output.txt"
