@@ -1,0 +1,36 @@
+====================================
+ Hero Scout CLI
+ Comparador profesional de superhéroes
+====================================
+Modo automático detectado por variables de entorno.
+
+====================================
+Comparando: Batman vs Lex Luthor
+====================================
+
+Datos generales:
+Batman: Terry McGinnis | DC Comics
+Lex Luthor: Lex Luthor | DC Comics
+
+Comparación de estadísticas:
+
+Fuerza:
+Batman: 40/100
+Lex Luthor: 53/100
+Ganador: Lex Luthor
+
+Velocidad:
+Batman: 29/100
+Lex Luthor: 25/100
+Ganador: Batman
+
+Combate:
+Batman: 90/100
+Lex Luthor: 70/100
+Ganador: Batman
+
+Comparación completada correctamente.
+
+========== docker ps -a ==========
+CONTAINER ID   IMAGE           COMMAND            CREATED          STATUS          PORTS     NAMES
+576b19003ccb   superhero-app   "python3 app.py"   16 seconds ago   Up 10 seconds             samplerunning
