@@ -1,0 +1,42 @@
+Started by user Axl Urrutia
+Running as SYSTEM
+Building in workspace /home/devasc/.jenkins/workspace/BuildAppJob
+The recommended git tool is: NONE
+using credential github-token
+Cloning the remote Git repository
+Cloning repository https://github.com/Exch4nged/superheroe-stats.git
+ > git init /home/devasc/.jenkins/workspace/BuildAppJob # timeout=10
+Fetching upstream changes from https://github.com/Exch4nged/superheroe-stats.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+using GIT_ASKPASS to set credentials GitHub Axl
+ > git fetch --tags --force --progress -- https://github.com/Exch4nged/superheroe-stats.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Exch4nged/superheroe-stats.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision c2bb59366b5d434efc8b52a6ab0a1321499e1998 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c2bb59366b5d434efc8b52a6ab0a1321499e1998 # timeout=10
+Commit message: "fix: corregir seleccion automatica de heroes y actualizar output.txt"
+First time build. Skipping changelog.
+[BuildAppJob] $ /bin/sh -xe /tmp/jenkins3237605725579810854.sh
++ export SUPERHERO_TOKEN=49161a06b6a6cf05bc4bc8fe747f047f
++ chmod +x build.sh
++ ./build.sh
+Limpiando contenedor anterior si existe...
+samplerunning
+samplerunning
+Creando Dockerfile...
+Construyendo imagen Docker...
+Step 1/6 : FROM python:3.11-slim
+Step 2/6 : WORKDIR /app
+Step 3/6 : COPY requirements.txt .
+Step 4/6 : RUN pip install --no-cache-dir -r requirements.txt
+Step 5/6 : COPY app.py .
+Step 6/6 : CMD ["python3", "app.py"]
+Successfully built 1fe0453e076e
+Successfully tagged superhero-app:latest
+Ejecutando contenedor...
+Proceso finalizado. Revisar evidencias/docker/output.txt
+Finished: SUCCESS
