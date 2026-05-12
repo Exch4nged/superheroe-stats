@@ -44,7 +44,7 @@ docker run --name samplerunning \
   -e HERO_1_I="1" \
   -e HERO_2="superman" \
   -e HERO_2_I="2" \
-  superhero-app > evidencias/docker/output.txt 2>&1
+  superhero-app 2>&1 | tee evidencias/docker/output.txt
 
 # Agrega el estado del contenedor al archivo de evidencias
 echo "" >> evidencias/docker/output.txt
